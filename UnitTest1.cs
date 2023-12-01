@@ -1,3 +1,5 @@
+using WpfPilot;
+
 namespace konyvTests
 {
     public class Tests
@@ -8,9 +10,11 @@ namespace konyvTests
         }
 
         [Test]
-        public void Test1()
+        public void StackPanelExists()
         {
-            Assert.Pass();
+            using var appDriver = AppDriver.Launch(@"C:\Users\User\stuff\project 12\konyv\bin\Debug\net6.0-windows\konyv.exe");
+            var stackPanel = appDriver.GetElement(x => x["Name"] == "select_container");
+            Assert.IsNotNull(stackPanel);
         }
     }
 }
