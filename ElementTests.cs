@@ -65,6 +65,7 @@ namespace konyvTests
         {
             using var appDriver = AppDriver.Launch(@"..\..\..\..\konyv\bin\Debug\net6.0-windows\konyv.exe");
             appDriver.GetElement(x => x["Name"] == "cbox_select").SetProperty("SelectedIndex", 1);
+            appDriver.GetElements(x => x["Content"] == "Cím:")[0].Click();
             var image = appDriver.GetElement(x => x["Name"] == "book_image");
             Assert.IsNotNull(image);
         }
@@ -74,7 +75,9 @@ namespace konyvTests
         {
             using var appDriver = AppDriver.Launch(@"..\..\..\..\konyv\bin\Debug\net6.0-windows\konyv.exe");
             appDriver.GetElement(x => x["Name"] == "cbox_select").SetProperty("SelectedIndex", 1);
+            appDriver.GetElements(x => x["Content"] == "Cím:")[0].Click();
             var link = appDriver.GetElement(x => x["Name"] == "HL_wiki");
+            Assert.IsNotNull(link);
         }
     }
 }
