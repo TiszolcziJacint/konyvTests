@@ -18,4 +18,10 @@
     <PackageReference Include="WpfPilot" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="konyv">
+      <HintPath>..\konyv\bin\Debug\net6.0-windows\konyv.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
